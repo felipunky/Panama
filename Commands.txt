@@ -13,3 +13,27 @@ ogr2ogr -skipfailures -f "ESRI Shapefile" C:\Users\Paula\Desktop\Felipe\Panama\B
 https://geonode.mupa.gob.pa/geoserver/wfs?format_options=charset%3AUTF-8&typename=geonode%3Arutas_trasnporte&outputFormat=SHAPE-ZIP&version=1.0.0&service=WFS&request=GetFeature
 C:\Users\Paula\Downloads\rutas_trasnporte\rutas_trasnporte.shp
 ogr2ogr -skipfailures -f "ESRI Shapefile" C:\Users\Paula\Desktop\Felipe\Panama\RutasTransporte\RutasClipped.shp C:\Users\Paula\Downloads\rutas_trasnporte\rutas_trasnporte.shp -clipsrc -79.4984 9.00015 -79.4803 9.0181
+ogr2ogr -clipsrc -79.4984 9.00015 -79.4803 9.0181 C:\Users\Paula\Desktop\Felipe\Panama\RutasTransporte\RutasClipped.shp C:\Users\Paula\Downloads\rutas_trasnporte\rutas_trasnporte.shp
+ogrinfo -ro -so C:\Users\Paula\Downloads\rutas_trasnporte\rutas_trasnporte.shp
+ogrinfo -ro -so C:\Users\Paula\Desktop\Felipe\Panama\RutasTransporte\RutasClipped.shp
+
+ogr2ogr -t_srs EPSG:4326 C:\Users\Paula\Downloads\barrios2010\Reprojected\barrios2010ReProj.shp C:\Users\Paula\Downloads\barrios2010\barrios2010.shp
+
+ogr2ogr -skipfailures -f "ESRI Shapefile" C:\Users\Paula\Desktop\Felipe\Panama\Barrios\BarriosClipped.shp C:\Users\Paula\Downloads\barrios2010\Reprojected\barrios2010ReProj.shp -clipsrc -79.4984 9.00015 -79.4803 9.0181
+
+ogr2ogr -t_srs EPSG:4326 C:\Users\Paula\Downloads\rutas_trasnporte\ReProject\RutasTransporteReProjected.shp C:\Users\Paula\Downloads\rutas_trasnporte\rutas_trasnporte.shp
+
+C:\Users\Paula\Downloads\rutas_trasnporte\ReProject\RutasTransporteReProjected.shp
+
+
+ogr2ogr -skipfailures -f "ESRI Shapefile" C:\Users\Paula\Desktop\Felipe\Panama\RutasTransporte\RutasClipped.shp C:\Users\Paula\Downloads\rutas_trasnporte\ReProject\RutasTransporteReProjected.shp -clipsrc -79.4984 9.00015 -79.4803 9.0181
+
+3Alevantamiento_varios1_1
+
+https://geonode.mupa.gob.pa/geoserver/wfs?format_options=charset%3AUTF-8&typename=geonode%3Anormativa_sf&outputFormat=SHAPE-ZIP&version=1.0.0&service=WFS&request=GetFeature
+
+C:\Users\Paula\Downloads\normativa_sf\normativa_sf.shp
+
+ogr2ogr -t_srs EPSG:4326 C:\Users\Paula\Downloads\normativa_sf\ReProject\NormativaReProjected.shp C:\Users\Paula\Downloads\normativa_sf\normativa_sf.shp
+
+ogr2ogr -skipfailures -f "ESRI Shapefile" C:\Users\Paula\Desktop\Felipe\Panama\Normativa\NormativaClipped.shp C:\Users\Paula\Downloads\normativa_sf\ReProject\NormativaReProjected.shp -clipsrc -79.4984 9.00015 -79.4803 9.0181
