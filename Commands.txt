@@ -1,0 +1,15 @@
+ogr2ogr -skipfailures -f "ESRI Shapefile" C:\Users\Paula\Desktop\Felipe\Panama\Park\ParkClipped.shp C:\Users\Paula\Desktop\Felipe\Panama\Park\Park.shp -clipsrc -79.4984 9.00015 -79.4803 9.0181
+C:\Users\Paula\Downloads\geologia
+"C:\Users\Paula\Desktop\Felipe\Panama\Park\Park.shp"
+href="https://geonode.mupa.gob.pa/geoserver/wfs?format_options=charset%3AUTF-8&typename=geonode%3Aedificios_panama&outputFormat=SHAPE-ZIP&version=1.0.0&service=WFS&request=GetFeature"
+C:\Users\Paula\Downloads\edificios_panama\edificios_panama.shp
+ogr2ogr -skipfailures -f "ESRI Shapefile" C:\Users\Paula\Desktop\Felipe\Panama\Edificios\EdificiosClipped.shp C:\Users\Paula\Downloads\edificios_panama\edificios_panama.shp -clipsrc -79.4984 9.00015 -79.4803 9.0181
+3Abarrios2010
+href="https://geonode.mupa.gob.pa/geoserver/wfs?format_options=charset%3AUTF-8&typename=geonode%3Abarrios2010&outputFormat=SHAPE-ZIP&version=1.0.0&service=WFS&request=GetFeature"
+C:\Users\Paula\Downloads\barrios2010\barrios2010.shp
+C:\Users\Paula\Downloads\edificios_panama\edificios_panama.shp
+ogr2ogr -skipfailures -f "ESRI Shapefile" C:\Users\Paula\Desktop\Felipe\Panama\Barrios\BarriosClipped.shp C:\Users\Paula\Downloads\barrios2010\barrios2010.shp -clipsrc -79.4984 9.00015 -79.4803 9.0181
+3Arutas_trasnporte
+https://geonode.mupa.gob.pa/geoserver/wfs?format_options=charset%3AUTF-8&typename=geonode%3Arutas_trasnporte&outputFormat=SHAPE-ZIP&version=1.0.0&service=WFS&request=GetFeature
+C:\Users\Paula\Downloads\rutas_trasnporte\rutas_trasnporte.shp
+ogr2ogr -skipfailures -f "ESRI Shapefile" C:\Users\Paula\Desktop\Felipe\Panama\RutasTransporte\RutasClipped.shp C:\Users\Paula\Downloads\rutas_trasnporte\rutas_trasnporte.shp -clipsrc -79.4984 9.00015 -79.4803 9.0181
