@@ -30,10 +30,22 @@ ogr2ogr -skipfailures -f "ESRI Shapefile" C:\Users\Paula\Desktop\Felipe\Panama\R
 
 3Alevantamiento_varios1_1
 
-https://geonode.mupa.gob.pa/geoserver/wfs?format_options=charset%3AUTF-8&typename=geonode%3Anormativa_sf&outputFormat=SHAPE-ZIP&version=1.0.0&service=WFS&request=GetFeature
+https://geonode.mupa.gob.pa/geoserver/wfs?format_options=charset%3AUTF-8&typename=geonode%3Apuntos_limpios_p&outputFormat=SHAPE-ZIP&version=1.0.0&service=WFS&request=GetFeature
 
 C:\Users\Paula\Downloads\normativa_sf\normativa_sf.shp
 
 ogr2ogr -t_srs EPSG:4326 C:\Users\Paula\Downloads\normativa_sf\ReProject\NormativaReProjected.shp C:\Users\Paula\Downloads\normativa_sf\normativa_sf.shp
 
 ogr2ogr -skipfailures -f "ESRI Shapefile" C:\Users\Paula\Desktop\Felipe\Panama\Normativa\NormativaClipped.shp C:\Users\Paula\Downloads\normativa_sf\ReProject\NormativaReProjected.shp -clipsrc -79.4984 9.00015 -79.4803 9.0181
+
+3Aareasprotegidas
+
+https://geonode.mupa.gob.pa/geoserver/wfs?format_options=charset%3AUTF-8&typename=geonode%3Aareasprotegidas&outputFormat=SHAPE-ZIP&version=1.0.0&service=WFS&request=GetFeature
+
+C:\Users\Paula\Downloads\areasprotegidas\ReProject
+
+ogr2ogr -t_srs EPSG:4326 C:\Users\Paula\Downloads\areasprotegidas\ReProject\AreasProtegidasReProjected.shp C:\Users\Paula\Downloads\areasprotegidas\areasprotegidas.shp
+
+ogr2ogr -skipfailures -f "ESRI Shapefile" C:\Users\Paula\Desktop\Felipe\Panama\AreasProtegidas\AreasProtegidasClipped.shp C:\Users\Paula\Downloads\areasprotegidas\ReProject\AreasProtegidasReProjected.shp -clipsrc -79.4984 9.00015 -79.4803 9.0181
+
+gdalwarp -te -79.4984 9.00015 -79.4803 9.0181 C:\Users\Paula\Downloads\N009W080\N009W080_AVE_DSM.tif C:\Users\Paula\Downloads\N009W080\Clipped.tif
